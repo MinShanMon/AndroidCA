@@ -3,26 +3,27 @@ package sg.nus.iss.team3.androidcateam3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.GridView;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     private final String[] first = {
-            "hug", "full", "peep", "what"
+            "hug", "full", "snore", "stop"
     };
     private final String[] second = {
-            "what", "peep", "full", "hug"
+            "full", "hug", "peep", "what"
     };
     private final String[] third = {
-            "peep", "hug", "what", "full"
+            "snore", "what", "peep", "stop"
     };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListView listView = findViewById(R.id.listView);
-        if(listView != null){
-            listView.setAdapter(new ViewImgBtn(this, first, second, third));
+        GridView gridView = findViewById(R.id.gridView);
+        if(gridView != null){
+            gridView.setAdapter(new ViewImgBtn(this, first, second, third));
 //            listView.setOnItemClickListener(this);
 
         }
